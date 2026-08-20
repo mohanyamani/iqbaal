@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Forever ❤️</title>
+<style>
+html,body{margin:0;height:100%;overflow:hidden;font-family:Arial;background:linear-gradient(135deg,#ff4d88,#6a11cb);color:#fff}
+body{display:flex;align-items:center;justify-content:center}
+#bg{position:fixed;inset:0;overflow:hidden}
+.heart{position:absolute;bottom:-30px;animation:rise 8s linear infinite;font-size:24px;opacity:.8}
+@keyframes rise{to{transform:translateY(-110vh);opacity:0}}
+.card{position:relative;z-index:2;width:min(92%,760px);padding:30px;border-radius:24px;background:rgba(255,255,255,.15);backdrop-filter:blur(12px);text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.3)}
+h1{margin:0}.counter{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:20px 0}.box{background:rgba(255,255,255,.15);padding:10px;border-radius:14px}.num{font-size:28px;font-weight:bold}
+button{padding:12px 24px;border:none;border-radius:20px;cursor:pointer}
+#letter{display:none;margin-top:20px;text-align:left}
+@media(max-width:600px){.counter{grid-template-columns:repeat(3,1fr)}}
+</style></head><body>
+<div id="bg"></div>
+<div class="card">
+<h1>❤️ Forever & Always ❤️</h1>
+<p>Since we met on <b>11 MAR 2023, 08:04 PM</b></p>
+<div class="counter">
+<div class=box><div id=y class=num>0</div>Years</div>
+<div class=box><div id=d class=num>0</div>Days</div>
+<div class=box><div id=h class=num>0</div>Hours</div>
+<div class=box><div id=m class=num>0</div>Minutes</div>
+<div class=box><div id=s class=num>0</div>Seconds</div>
+<div class=box><div class=num>❤️</div>Love</div>
+</div>
+<button onclick="t()">💌 Open Feeling Letter</button>
+<div id=letter><h2>Iqbaal,</h2><p>❤️Saaxiibtayda qaaliga ah ❤️,
+
+Waxaad tahay qof aan noloshayda qiimo weyn ku leh. Mar walba waxaad ila joogtaa farxad iyo murugaba, taas ayaana kaa dhigaysa saaxiib dhab ah. Waxaan kuu rajaynayaa guul, caafimaad, iyo nolol barwaaqo leh. Ilaahay ha kuu furo albaab kasta oo kheyr ah, hana kuu sahlo riyooyinkaaga oo dhan. Waan ku faraxsanahay inaan ku haysto saaxiib adiga oo kale. Weligaa sida aad tahay u sii ifi, maxaa yeelay waxaad tahay qof gaar ah.
+
+Waan ku jeclahay, mar walbana waan kuu garab taaganahay Iqbaal. 🤍❤️</p></div>
+</div>
+<script>
+const start=new Date("2023-03-11T07:04:00");
+function upd(){
+ let now=new Date(),diff=now-start;
+ let sec=Math.floor(diff/1000),days=Math.floor(sec/86400);
+ let years=Math.floor(days/365); days%=365;
+ let hrs=Math.floor((sec%86400)/3600),mins=Math.floor((sec%3600)/60),secs=sec%60;
+ y.textContent=years; d.textContent=days; h.textContent=hrs; m.textContent=mins; s.textContent=secs;
+}
+setInterval(upd,1000);upd();
+function t(){letter.style.display=letter.style.display=="block"?"none":"block";}
+setInterval(()=>{let e=document.createElement("div");e.className="heart";e.textContent="❤️";e.style.left=Math.random()*100+"vw";e.style.fontSize=(16+Math.random()*24)+"px";document.getElementById("bg").appendChild(e);setTimeout(()=>e.remove(),8000);},250);
+</script></body></html>
